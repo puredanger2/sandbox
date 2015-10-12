@@ -1,7 +1,7 @@
 machine:
   pre:
     - curl -o jbake.zip http://jbake.org/files/jbake-2.4.0-bin.zip
-    - tar xf jbake.zip
+    - unzip jbake.zip
   environment:
     JBAKE_HOME: jbake-2.4.0
 
