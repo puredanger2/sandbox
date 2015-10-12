@@ -1,0 +1,23 @@
+machine:
+	pre:
+		- curl -o jbake.zip http://jbake.org/files/jbake-2.4.0-bin.zip
+		- tar xf jbake.zip
+	environment:
+		JBAKE_HOME: jbake-2.4.0
+
+test:
+	override:
+		- jbake-2.4.0/jbake -b
+
+deployment:
+	staging:
+		branch: master
+		owner: puredanger
+		commands:
+			- ./deploy/deploy_staging.sh
+	release:
+		tag: /r-.*/
+		owner: puredanger
+		commands:
+			- ./deploy/deploy_prod.sh
+
