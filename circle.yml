@@ -7,7 +7,7 @@ machine:
 
 test:
   override:
-    - jbake-2.4.0/jbake -b
+    - jbake-2.4.0/bin/jbake -b
 
 deployment:
   staging:
