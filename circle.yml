@@ -3,12 +3,12 @@ machine:
     - curl -o jbake.zip http://jbake.org/files/jbake-2.4.0-bin.zip
     - unzip jbake.zip
   environment:
-    JBAKE_HOME: jbake-2.4.0
+    JBAKE_HOME: $HOME/jbake-2.4.0
 
 test:
   override:
     - ls -ltr
-    - ./jbake-2.4.0/bin/jbake -b
+    - $JBAKE_HOME/bin/jbake -b
 
 deployment:
   staging:
