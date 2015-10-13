@@ -1,6 +1,6 @@
 machine:
   pre:
-    - if [[ -e ~/jbake-2.4.0 ]]; then curl -o jbake.zip http://jbake.org/files/jbake-2.4.0-bin.zip; unzip jbake.zip; fi
+    - if [[ ! -e ~/jbake-2.4.0 ]]; then curl -o jbake.zip http://jbake.org/files/jbake-2.4.0-bin.zip; unzip jbake.zip; fi
   environment:
     JBAKE_HOME: $HOME/jbake-2.4.0
 
@@ -19,7 +19,6 @@ deployment:
     commands:
       - aws --region us-west-2 s3 sync output/ s3://sbst.cognitect.com/ --delete
   release:
-    branch: master
     tag: /r-.*/
     owner: puredanger
     commands:
