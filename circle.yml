@@ -15,10 +15,10 @@ deployment:
     branch: master
     owner: puredanger
     commands:
-      - ./deploy/deploy_staging.sh
+      - aws s3 sync output/ s3://sbst.cognitect.com/
   release:
     tag: /r-.*/
     owner: puredanger
     commands:
-      - ./deploy/deploy_prod.sh
+      - aws s3 sync output/ s3://sbpr.cognitect.com/
 
