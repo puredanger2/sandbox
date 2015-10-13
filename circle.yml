@@ -1,5 +1,5 @@
 machine:
-  pre:
+  post:
     - if [[ ! -d $HOME/jbake-2.4.0 ]]; then curl -o jbake.zip http://jbake.org/files/jbake-2.4.0-bin.zip; unzip jbake.zip; fi
   environment:
     JBAKE_HOME: $HOME/jbake-2.4.0
