@@ -7,7 +7,6 @@ machine:
 
 test:
   override:
-    - ls -ltr
     - $JBAKE_HOME/bin/jbake -b
 
 deployment:
@@ -15,10 +14,10 @@ deployment:
     branch: master
     owner: puredanger
     commands:
-      - aws s3 sync output/ s3://sbst.cognitect.com/
+      - aws --region us-west-2 s3 sync output/ s3://sbst.cognitect.com/ --delete
   release:
     tag: /r-.*/
     owner: puredanger
     commands:
-      - aws s3 sync output/ s3://sbpr.cognitect.com/
+      - aws --region us-west-2 s3 sync output/ s3://sbpr.cognitect.com/ --delete
 
