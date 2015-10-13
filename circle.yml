@@ -16,6 +16,7 @@ deployment:
     commands:
       - aws --region us-west-2 s3 sync output/ s3://sbst.cognitect.com/ --delete
   release:
+    branch: master
     tag: /r-.*/
     owner: puredanger
     commands:
